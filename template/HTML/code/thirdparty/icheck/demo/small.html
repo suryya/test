@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Customize checkboxes and radio buttons with iCheck (jQuery and Zepto) plugin</title>
+  <meta charset="utf-8">
+  <meta content="width=device-width" name="viewport">
+  <link href="../skins/square/_all.css?v=0.9.1" rel="stylesheet">
+  <script src="./js/jquery.js"></script>
+  <script src="../jquery.icheck.min.js?v=0.9.1"></script>
+</head>
+<body>
+  <div class="layout clear">
+
+
+    <div class="demo-holder">
+      <h2 class="demo-title">Demo</h2>
+      <div class="demo">
+        <div class="arrows">
+          <div class="top" data-to="features"></div>
+          <div class="bottom" data-to="skins"></div>
+        </div>
+        <div class="demo-list clear">
+          <ul>
+            <li>
+              <input tabindex="1" type="checkbox" id="input-1">
+              <label for="input-1">Checkbox, <span>#input-1</span></label>
+            </li>
+            <li>
+              <input tabindex="2" type="checkbox" id="input-2" checked>
+              <label for="input-2">Checkbox, <span>#input-2</span></label>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <input tabindex="3" type="radio" id="input-3" name="demo-radio">
+              <label for="input-3">Radio button, <span>#input-3</span></label>
+            </li>
+            <li>
+              <input tabindex="4" type="radio" id="input-4" name="demo-radio" checked>
+              <label for="input-4">Radio button, <span>#input-4</span></label>
+            </li>
+          </ul>
+          <script>
+          $(document).ready(function(){
+            var callbacks_list = $('.demo-callbacks ul');
+            /*$('.demo-list input').on('ifCreated ifClicked ifChanged ifChecked ifUnchecked ifDisabled ifEnabled ifDestroyed', function(event){
+              callbacks_list.prepend('<li><span>#' + this.id + '</span> is ' + event.type.replace('if', '').toLowerCase() + '</li>');
+            }).iCheck({
+              checkboxClass: 'icheckbox_square-blue',
+              radioClass: 'iradio_square-blue',
+              increaseArea: '20%'
+            });*/
+			
+			
+			$('.demo-list input').iCheck({
+              checkboxClass: 'icheckbox_square-blue',
+              radioClass: 'iradio_square-blue',
+              increaseArea: '20%'
+            });
+			
+			
+          });
+          </script>
+        </div>
+        <dl class="demo-methods">
+          <dt>
+            <span class="self do-check">Add <span class="mark">checked</span> state to 1 and 3 inputs</span>
+            <span class="code">
+              <span class="self">show code</span>
+            </span>
+          </dt>
+          <dd>
+<pre class="markup">
+$('#input-1, #input-3').iCheck('check');
+</pre>
+          </dd>
+          <dt>
+            <span class="self do-uncheck">Remove <span class="mark">checked</span> state from 1 and 3 inputs</span>
+            <span class="code">
+              <span class="self">show code</span>
+            </span>
+          </dt>
+          <dd>
+<pre class="markup">
+$('#input-1, #input-3').iCheck('uncheck');
+</pre>
+          </dd>
+          <dt>
+            <span class="self do-disable">Add <span class="mark">disabled</span> state to 2 and 4 inputs</span>
+            <span class="code">
+              <span class="self">show code</span>
+            </span>
+          </dt>
+          <dd>
+<pre class="markup">
+$('#input-2, #input-4').iCheck('disable');
+</pre>
+          </dd>
+          <dt>
+            <span class="self do-enable">Remove <span class="mark">disabled</span> state from 2 and 4 inputs</span>
+            <span class="code">
+              <span class="self">show code</span>
+            </span>
+          </dt>
+          <dd>
+<pre class="markup">
+$('#input-2, #input-4').iCheck('enable');
+</pre>
+          </dd>
+          <dt>
+            <span class="self do-destroy">Remove all traces of iCheck</span>
+            <span class="code">
+              <span class="self">show code</span>
+            </span>
+          </dt>
+          <dd>
+<pre class="markup">
+$('input').iCheck('destroy');
+</pre>
+          </dd>
+        </dl>
+        <div class="demo-callbacks">
+          <h2>Callbacks</h2>
+          <ul></ul>
+        </div>
+      </div>
+    </div>
+</html>
