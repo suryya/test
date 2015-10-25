@@ -1,5 +1,5 @@
 <?php
-include 'contact_config.php'; // Config include
+include 'contact_config.php'; // Config include statement
 error_reporting (E_ALL ^ E_NOTICE);
 $post = (!empty($_POST)) ? true : false;
 if($post)
